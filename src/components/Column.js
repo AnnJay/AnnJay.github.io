@@ -31,6 +31,7 @@ export const Column = ({ title }) => {
               <Draggable key={card.id} draggableId={card.id} index={index}>
                 {(provided) => (
                   <div
+                    className="simple-card__container"
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
@@ -40,7 +41,7 @@ export const Column = ({ title }) => {
                 )}
               </Draggable>
             ))}
-            
+
             {provided.placeholder}
           </div>
         )}

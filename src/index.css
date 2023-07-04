@@ -39,5 +39,8 @@ code {
   background-color: #e2dede;
 
   padding: 10px;
+}
+
+.simple-card__container {
   margin-bottom: 15px;
 }
