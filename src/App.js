@@ -1,5 +1,4 @@
-import "./App.css";
-import { Board } from "./components";
+import { Board } from './components'
 
 export const App = () => {
   return (
@@ -7,8 +6,8 @@ export const App = () => {
       <div className="app-header">
         <h1>DND TEST</h1>
       </div>
-      
+
       <Board />
     </div>
-  );
-};
+  )
+}
