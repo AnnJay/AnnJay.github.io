@@ -39,12 +39,10 @@ const sortColumns = (columnsInfo) => {
     (col1, col2) => col1.order - col2.order
   )
 
-
   return res
 }
 
 const fillColumnsWithPosts = (columnsInfo, posts) => {
-
   if (!posts) return
   const columnTypes = Object.keys(columnsInfo)
 
@@ -83,8 +81,6 @@ export const Board = () => {
     fillColumnsWithPosts(COLUMNS_INFO, posts)
   )
 
-
-
   const handleDragEnd = (result, columns, setColumns) => {
     if (!result.destination) return
 
@@ -108,17 +104,17 @@ export const Board = () => {
         },
       })
     } else {
-    const column = columns[source.droppableId]
-    const copiedItems = [...column.posts]
-    const [removed] = copiedItems.splice(source.index, 1)
-    copiedItems.splice(destination.index, 0, removed)
-    setColumns({
-      ...columns,
-      [source.droppableId]: {
-        ...column,
-        posts: copiedItems,
-      },
-    })
+      const column = columns[source.droppableId]
+      const copiedItems = [...column.posts]
+      const [removed] = copiedItems.splice(source.index, 1)
+      copiedItems.splice(destination.index, 0, removed)
+      setColumns({
+        ...columns,
+        [source.droppableId]: {
+          ...column,
+          posts: copiedItems,
+        },
+      })
     }
 
     // if (!result.destination) return
@@ -134,7 +130,7 @@ export const Board = () => {
     <DragDropContext
       onDragEnd={(result) => handleDragEnd(result, columns, setColumns)}
     >
-      <div className="p-4">
+      <div className="board p-4">
         <div className="row gx-4">
           {columns &&
             sortColumns(columns).map((column) => (
